@@ -1,14 +1,11 @@
 package com.db.tradestore.service;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,7 +13,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.db.tradestore.exception.TradeInvalidException;
 import com.db.tradestore.model.Trade;
 import com.db.tradestore.repository.TradeRepository;
 
@@ -44,5 +40,15 @@ public class TradeServiceTest {
 		assertEquals(TRADE_ID2, trades.get(1).getTradeId());
 	}
 	
+	private Trade createTrade(String tradeId, int version, LocalDate maturityDate) {
+		Trade trade = new Trade();
+		trade.setTradeId(tradeId);
+		trade.setBookId(tradeId + "B1");
+		trade.setVersion(version);
+		trade.setCounterParty(tradeId + "Cpty");
+		trade.setMaturityDate(maturityDate);
+		trade.setExpiredFlag("Y");
+		return trade;
+	}
 	
 }
