@@ -10,6 +10,5 @@ import com.db.tradestore.model.TradeId;
 
 @Repository
 public interface TradeRepository extends JpaRepository<Trade,TradeId> {
-//	Trade findFirstByIdOrderByVersionDesc(TradeId id);
 	Optional<Trade> findFirstByTradeIdOrderByVersionDesc(String id);
 }
