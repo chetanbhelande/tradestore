@@ -5,8 +5,8 @@ Problem Statement There is a scenario where thousands of trades are flowing into
 
 #Service 
 
-1. http://localhost:9090/trade { "tradeId":"T1", "version":1, "counterParty":"counterParty1",
-"bookId": "bookId", "maturityDate": "2020-05-20", "expiredFlag":"Y" }
+1. http://localhost:9090/trade { "tradeId":"T1", "version":1, "counterParty":"CP1",
+"bookId": "B1", "maturityDate": "2025-05-20", "expiredFlag":"Y" }
 
 2. http://localhost:9090/trade to get all trade but pagination has not implemented in big system its not recommeded.
 
